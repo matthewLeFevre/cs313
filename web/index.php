@@ -9,7 +9,19 @@
   <title>Matthew LeFevre</title>
 </head>
 <body class="grid">
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/web/header.php'?>
+  <header class="col--12 bg-blue grid--nested">
+    <h1 class="txt-white col--12 col--sml--6 col--mdm--4 header__logo">Matthew LeFevre</h1>
+    <nav class="col--12 col--sml--6 col--mdm--8 nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="/web/index.php">Home</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/web/assignments.php">Assignments</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <main class="col--12 home">
     <section class="page__section class="page__section__heading"">
       <h2 class="page__section__heading">About Me</h2>
@@ -41,6 +53,8 @@
       </div>
     </section>
   </main>
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/web/footer.php'?>
+  <footer class="col--12">
+    <span>Matthew LeFevre &copy; <?php echo date("Y"); ?></span>
+  </footer>
 </body>
 </html>
