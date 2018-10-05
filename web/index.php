@@ -14,10 +14,10 @@
     <nav class="col--12 col--sml--6 col--mdm--8 nav">
       <ul class="nav__list">
         <li class="nav__item">
-          <a class="nav__link" href="/index.php">Home</a>
+          <a class="nav__link" href="./index.php">Home</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link" href="/assignments.php">Assignments</a>
+          <a class="nav__link" href="./assignments.php">Assignments</a>
         </li>
       </ul>
     </nav>

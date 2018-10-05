@@ -14,10 +14,10 @@
     <nav class="col--12 col--sml--6 col--mdm--8 nav">
       <ul class="nav__list">
         <li class="nav__item">
-          <a class="nav__link" href="/index.php">Home</a>
+          <a class="nav__link" href="./index.php">Home</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link" href="/assignments.php">Assignments</a>
+          <a class="nav__link" href="./assignments.php">Assignments</a>
         </li>
       </ul>
     </nav>
@@ -25,6 +25,8 @@
   <main class="col--12">
     <section class="page__section">
       <h2>Assignments comming soon!</h2>
+      <p><a href="./assignments/week3/index.html">Group Assignment Week 3</a></p>
+      <p><a href="./assignments/week3/shoppingCart/index.php">Shopping Cart Assignment Week 3</a></p>
     </section>
   </main>
   <footer class="col--12">
