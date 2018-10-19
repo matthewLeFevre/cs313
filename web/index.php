@@ -19,6 +19,9 @@
         <li class="nav__item">
           <a class="nav__link" href="./assignments.php">Assignments</a>
         </li>
+        <li class="nav__item">
+          <a class="nav__link" href="./index.html">Web Application</a>
+        </li>
       </ul>
     </nav>
   </header>

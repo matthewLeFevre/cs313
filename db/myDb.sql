@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS "user" (
   "userStatus" VARCHAR(12) NOT NULL DEFAULT 'basic',
   PRIMARY KEY ("userId"));
 
-INSERT INTO "user" (userName, userEmail, userPassword, userStatus) VALUES ("matthew", "matthewlefevre95@gmail.com", "letMeIn", "administrator");
+-- INSERT INTO "user" (userName, userEmail, userPassword, userStatus) VALUES ("matthew", "matthewlefevre95@gmail.com", "letMeIn", "administrator");
 INSERT INTO "user" ("userName", "userEmail", "userPassword") VALUES ( 'joey', 'joeyray', 'letmeintoo');
 
 
@@ -38,6 +38,8 @@ CREATE TABLE IF NOT EXISTS "asset" (
     REFERENCES "user" ("userId")
     ON DELETE CASCADE
     ON UPDATE CASCADE);
+
+    INSERT INTO "asset" ("assetPath", "assetName", "userId") VALUES ( '//c:/asset.jpg', 'asset', '1');
 
 
 
