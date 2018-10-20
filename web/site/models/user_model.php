@@ -64,6 +64,16 @@
     }
   }
 
+  function get_users() {
+    $db = dbConnect();
+    $sql = 'SELECT "userName", "userJoined", "userEmail" FROM "user"';
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $userData;
+  }
+
 // Lower priority functions
 
   function update_existing_user() {}

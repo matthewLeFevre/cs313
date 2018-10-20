@@ -1,6 +1,7 @@
 <?php 
   include '/app/web/site/library/include.php';
   $indexHead = new Head('Home');
+  $users = get_users();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +13,14 @@
   <?php include './header.php' ?>
 
   <main class="grid--padded">
-    <section class="home__container col--12 col--sml--7 col--mdm--8 bg-blue">
-      <?= test(); ?>
+    <section class="home__container col--12 col--sml--7 col--mdm--8">
+      <?php foreach ($user as $u) {?>
+        <div>
+          <h2><?= $u['userName']?></h2>
+          <span><?= $u['userJoined'] ?></span>
+          <p><?= $u['userEmail']?></p>
+        </div>
+      <?php } ?>
     </section>
     <aside class="account__container col--12 col--sml--5 col--mdm--4 bg-yellow">
       <form action="../server.php" method="POST" class="form">
