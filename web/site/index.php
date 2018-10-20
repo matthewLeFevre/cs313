@@ -1,11 +1,19 @@
 <?php 
   include '/app/web/site/library/include.php';
   
-  $app = new Server();
+  // $app = new Server();
 
-  $app->listen();
+  // $app->listen();
 
-  $action = $app->getAction();
+  // $action = $app->getAction();
+
+  $action = filter_input(INPUT_POST, 'action');
+  if ($action == NULL){
+    $action = filter_input(INPUT_GET, 'action');
+    if($action == NULL){
+      $action = 'home';
+    }
+  }
 
   switch($action) {
     case 'home':
