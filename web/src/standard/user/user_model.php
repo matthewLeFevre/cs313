@@ -34,19 +34,17 @@
     $stmt->bindValue(':userEmail',     $newUserData['userEmail'],     PDO::PARAM_STR);
     $stmt->bindValue(':userPassword',  $newUserData['userPassword'],  PDO::PARAM_STR);
 
-    echo("got past data bindings");
+    echo("got past data bindings </br>");
   
     // Optional data not working right currently
     // $stmt->bindValue(':userFirstName', $newUserData['userFirstName'], PDO::PARAM_STR);
     // $stmt->bindValue(':userLastName',  $newUserData['userLastName'],  PDO::PARAM_STR);
     
     $stmt->execute();
-    echo("got past data execute");
+    echo("got past data execute </br>");
 
     $rowsChanged = $stmt->rowCount();
     $stmt->closeCursor();
-    echo("got past close cursort $rowChanged");
-    exit;
     return $rowsChanged;
   }
 
