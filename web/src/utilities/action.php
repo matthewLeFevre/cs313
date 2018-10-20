@@ -1,6 +1,6 @@
 <?php 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/src/include.php';
+require_once './src/include.php';
 
 class Action
 {

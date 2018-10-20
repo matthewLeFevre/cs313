@@ -1,6 +1,6 @@
 <?php 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/src/include.php';
+require_once './src/include.php';
 
 // CSRF (cross-site request forgery) vulnerability
 // due to serving spa's on seprate local server for 
@@ -15,8 +15,8 @@ header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS");
 $app = new Generic();
 
 // add controllers
-$app->addController($asset);
-$app->addController($article);
+// $app->addController($asset);
+// $app->addController($article);
 $app->addController($user);
 
 // start server

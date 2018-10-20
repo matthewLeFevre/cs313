@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/src/include.php';
+require_once './src/include.php';
 
 /**
  * Generic 
@@ -181,8 +181,20 @@ class Generic {
     function validateJsonPost($json_str) {
         // JSON POST listener has content
         if(!empty($json_str)) {
+            // echo($json_str);
 
-            $reqArr = json_decode($json_str, true);
+            // $reqArr = json_encode($json_str);
+
+            parse_str($json_str, $reqArr);
+
+            foreach ($reqArr as $key => $value) {
+                if($key != 'action' && $key != 'controller') {
+                    $reqArr['payload'][$key] = $value;
+                    unset($reqArr[$key]);
+                }
+            }
+
+            // $reqArr = json_decode($json_str, true);
             
             $this->reqAction = filter_var($reqArr['action'], FILTER_SANITIZE_STRING);
             $this->reqController = filter_var($reqArr['controller'], FILTER_SANITIZE_STRING);
@@ -191,6 +203,7 @@ class Generic {
             if( empty($this->reqAction) || 
                 empty($this->reqController)|| 
                 empty($this->payload)){
+                var_dump($reqArr);
                 echo json_encode(response("failure", "Bad post request. Either the controller action or payload was not sent."));
                 return; 
                 exit;

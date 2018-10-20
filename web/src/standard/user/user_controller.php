@@ -1,6 +1,6 @@
 <?php 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/src/include.php';
+require_once './src/include.php';
 
 /**
  * User
@@ -36,7 +36,7 @@ $user->addAction('loginUser',
 
   function($payload){
 
-    $filterLoad = Controller::filterLoad($payload);
+    $filterLoad = Controller::filterPayload($payload);
                   Controller::required(['userEmail', 'userPassword'], $filterLoad);
 
     $userPassword = $filterLoad['userPassword'];
@@ -79,12 +79,12 @@ $user->addAction('registerUser',
 
   function($payload){
 
-    $filteredPayload = Controller::filterLoad($payload);
+    $filterLoad = Controller::filterPayload($payload);
                       Controller::required(['userName', 'userEmail', 'userPassword'], $payload);
 
     // Ensure that password and email are valid and clean
-    $filteredPayload['userEmail'] = checkEmail($filteredPayload['userEmail']);
-    $userEmailVerify = verify_email($filteredPayload['userEmail']);
+    $filterLoad['userEmail'] = checkEmail($filterLoad['userEmail']);
+    $userEmailVerify = verify_email($filterLoad['userEmail']);
 
     // Throw error that entered email address already exists
     if($userEmailVerify){
@@ -93,12 +93,12 @@ $user->addAction('registerUser',
     }
 
     // hash the password before putting it into the database
-    $filteredPayload['userPassword'] = password_hash($filteredPayload['userPassword'], PASSWORD_DEFAULT);
-    $newRegistrationStatus = register_new_user($filteredPayload);
+    $filterLoad['userPassword'] = password_hash($filterLoad['userPassword'], PASSWORD_DEFAULT);
+    $newRegistrationStatus = register_new_user($filterLoad);
 
     // create custom notification that registration was successful
     if($newRegistrationStatus) {
-      return Response::success($filteredPayload['userName'] . " account created successfully. Please login to access your account.");
+      return Response::success($filterLoad['userName'] . " account created successfully. Please login to access your account.");
       exit;
     }
 
