@@ -88,7 +88,7 @@ $user->addAction('registerUser',
 
     function get_all_users() {
       $db = dbConnect();
-      $sql = `SELECT * FROM "user"`;
+      $sql = 'SELECT * FROM "user"';
       $stmt = $db->prepare($sql);
       $stmt->execute();
       $data = $stmt->fetchAll(PDO::FETCH_NAMED);
