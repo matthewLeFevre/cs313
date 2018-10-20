@@ -6,12 +6,12 @@ session_start();
 $path = '/app/web/site/';
 
 // models
-require_once $pah . '/models/article_model.php';
-require_once $pah . '/models/user_model.php';
-require_once $pah . '/models/asset_model.php';
+require_once $path . '/models/article_model.php';
+require_once $path . '/models/user_model.php';
+require_once $path . '/models/asset_model.php';
 
 
 // library
-require_once $pah . '/library/db_connect.php';
-require_once $pah . '/library/db_connect.php';
-require_once $pah . '/library/services.php';
+require_once $path . '/library/db_connect.php';
+require_once $path . '/library/db_connect.php';
+require_once $path . '/library/services.php';
