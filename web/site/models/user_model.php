@@ -66,7 +66,7 @@
 
   function get_users() {
     $db = dbConnect();
-    $sql = 'SELECT "userName", "userJoined", "userEmail" FROM "user"';
+    $sql = 'SELECT * FROM "user"';
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $userData = $stmt->fetch(PDO::FETCH_ASSOC);
