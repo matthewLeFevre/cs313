@@ -15,7 +15,7 @@
 
   <main class="grid--padded">
     <section class="home__container col--12 col--sml--7 col--mdm--8">
-      <?php foreach ($user as $u) {?>
+      <?php foreach ($users as $u) {?>
         <div>
           <h2><?= $u['userName']?></h2>
           <span><?= $u['userJoined'] ?></span>
