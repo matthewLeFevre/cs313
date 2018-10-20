@@ -2,6 +2,7 @@
   include '/app/web/site/library/include.php';
   $indexHead = new Head('Home');
   $users = get_users();
+  var_dump($users);
 ?>
 <!DOCTYPE html>
 <html lang="en">
