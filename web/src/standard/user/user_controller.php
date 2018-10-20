@@ -80,20 +80,20 @@ $user->addAction('registerUser',
   function($payload){
 
     $filterLoad = Controller::filterPayload($payload);
-                      Controller::required(['userName', 'userEmail', 'userPassword'], $payload);
+                  Controller::required(['userName', 'userEmail', 'userPassword'], $payload);
 
     // Ensure that password and email are valid and clean
-    $filterLoad['userEmail'] = checkEmail($filterLoad['userEmail']);
+    $filterLoad['userEmail'] = checkEmail($payload['userEmail']);
     $userEmailVerify = verify_email($filterLoad['userEmail']);
 
     echo('got here');
     exit;
 
     // Throw error that entered email address already exists
-    if($userEmailVerify){
-      return Response::err("An account with that email address already exists please try logging in or using a different email.");
-      exit;
-    }
+    // if($userEmailVerify){
+    //   return Response::err("An account with that email address already exists please try logging in or using a different email.");
+    //   exit;
+    // }
 
     // hash the password before putting it into the database
     $filterLoad['userPassword'] = password_hash($filterLoad['userPassword'], PASSWORD_DEFAULT);
