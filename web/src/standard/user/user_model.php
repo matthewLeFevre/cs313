@@ -3,7 +3,7 @@
 // Get user data from an Id
   function get_user_by_id($userId) {
     $db = dbConnect();
-    $sql = 'SELECT * FROM user WHERE userId = :userId';
+    $sql = 'SELECT * FROM "user" WHERE "userId" = :userId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);
     $stmt->execute();
@@ -15,7 +15,7 @@
 // Get user data from an email
   function get_user_by_email($userEmail) {
     $db = dbConnect();
-    $sql = 'SELECT * FROM user WHERE userEmail = :userEmail';
+    $sql = 'SELECT * FROM "user" WHERE "userEmail" = :userEmail';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
     $stmt->execute();

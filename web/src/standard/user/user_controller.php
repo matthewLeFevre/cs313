@@ -40,7 +40,7 @@ $user->addAction('loginUser',
                   Controller::required(['userEmail', 'userPassword'], $filterLoad);
 
     $userPassword = $filterLoad['userPassword'];
-    $userEmail    = $filterLoad['userEmail'];
+    $userEmail    = $payload['userEmail'];
     $userEmail    = checkEmail($userEmail);
     // $userPasswordCheck = checkPassword($userPassword); uncomment befor production and test
 
@@ -56,6 +56,10 @@ $user->addAction('loginUser',
     if($GLOBALS['user']->getTokenValidation()) {
       $userData['apiToken'] = generateJWT($userData["userId"]);
     }
+
+    $_SESSION['loggedin'] = TRUE;
+    $_SESSION['userData'] = $userData;
+    header('Location: /site/profile.php');
     
     return Response::data($userData, 'User successfully logged in.');
 
@@ -117,3 +121,10 @@ $user->addAction('registerUser',
     }
 
 });
+
+$user->addAction('logoutUser',
+
+  function ($payload){
+    session_destroy();
+    header('Location: /site/index.php');
+  });

@@ -1,7 +1,7 @@
 <?php
 
 // utilities
-
+session_start();
 /**
  *  Configure this db_connect file to connect to the database you have
  *  created.
