@@ -84,7 +84,7 @@ $user->addAction('registerUser',
 
     // Ensure that password and email are valid and clean
     $filterLoad['userEmail'] = checkEmail($payload['userEmail']);
-    // $userEmailVerify = verify_email($filterLoad['userEmail']);
+    $userEmailVerify = verify_email($filterLoad['userEmail']);
 
     function get_all_users() {
       $db = dbConnect();
@@ -96,14 +96,13 @@ $user->addAction('registerUser',
     return $data;
     }
 
-    var_dump(get_all_users());
-    exit;
+   
 
     // Throw error that entered email address already exists
-    // if($userEmailVerify){
-    //   return Response::err("An account with that email address already exists please try logging in or using a different email.");
-    //   exit;
-    // }
+    if($userEmailVerify){
+      return Response::err("An account with that email address already exists please try logging in or using a different email.");
+      exit;
+    }
 
     // hash the password before putting it into the database
     $filterLoad['userPassword'] = password_hash($filterLoad['userPassword'], PASSWORD_DEFAULT);
@@ -111,8 +110,10 @@ $user->addAction('registerUser',
 
     // create custom notification that registration was successful
     if($newRegistrationStatus) {
-      return Response::success($filterLoad['userName'] . " account created successfully. Please login to access your account.");
+      var_dump(get_all_users());
       exit;
+      // return Response::success($filterLoad['userName'] . " account created successfully. Please login to access your account.");
+      // exit;
     }
 
 });
