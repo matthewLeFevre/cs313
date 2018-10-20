@@ -86,6 +86,9 @@ $user->addAction('registerUser',
     $filterLoad['userEmail'] = checkEmail($filterLoad['userEmail']);
     $userEmailVerify = verify_email($filterLoad['userEmail']);
 
+    echo('got here');
+    exit;
+
     // Throw error that entered email address already exists
     if($userEmailVerify){
       return Response::err("An account with that email address already exists please try logging in or using a different email.");
