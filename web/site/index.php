@@ -20,7 +20,7 @@
 
   switch($action) {
     case 'home':
-      include 'views/home.php'
+      include 'views/home.php';
     break;
     case 'blog':
       include 'views/blog.php';
