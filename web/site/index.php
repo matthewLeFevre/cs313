@@ -1,5 +1,6 @@
 <?php 
   include './library/include.php';
+  include './head.php';
   $indexHead = new Head('Home');
 ?>
 <!DOCTYPE html>
