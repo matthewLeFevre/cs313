@@ -83,8 +83,8 @@ $user->addAction('registerUser',
                   Controller::required(['userName', 'userEmail', 'userPassword'], $payload);
 
     // Ensure that password and email are valid and clean
-    $filterLoad['userEmail'] = checkEmail($payload['userEmail']);
-    $userEmailVerify = verify_email($filterLoad['userEmail']);
+    // $filterLoad['userEmail'] = checkEmail($payload['userEmail']);
+    // $userEmailVerify = verify_email($filterLoad['userEmail']);
 
     echo('got here');
     exit;
