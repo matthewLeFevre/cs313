@@ -26,8 +26,7 @@
 
 // register a new user
   function register_new_user($newUserData) {
-    var_dump($newUserData);
-    exit;
+    
     $db = dbConnect();
     $sql = 'INSERT INTO "user" (userName, userEmail, userPassword) VALUES (:userName, :userEmail, :userPassword)';
     $stmt = $db->prepare($sql);
@@ -35,13 +34,19 @@
     $stmt->bindValue(':userEmail',     $newUserData['userEmail'],     PDO::PARAM_STR);
     $stmt->bindValue(':userPassword',  $newUserData['userPassword'],  PDO::PARAM_STR);
 
+    echo("got past data bindings");
+    exit;
     // Optional data not working right currently
     // $stmt->bindValue(':userFirstName', $newUserData['userFirstName'], PDO::PARAM_STR);
     // $stmt->bindValue(':userLastName',  $newUserData['userLastName'],  PDO::PARAM_STR);
     
     $stmt->execute();
+    echo("got past data execute");
+
     $rowsChanged = $stmt->rowCount();
     $stmt->closeCursor();
+    echo("got past close cursort $rowChanged");
+    exit;
     return $rowsChanged;
   }
 
