@@ -1,8 +1,8 @@
 <?php 
-  require_once './head.php';
-  require_once './library/include.php';
+  include './library/include.php';
   $indexHead = new Head('Home');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <?php echo($indexHead->add()); ?>

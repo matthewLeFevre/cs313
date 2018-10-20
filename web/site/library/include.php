@@ -3,14 +3,15 @@
 session_start();
 
 // $_SERVER['DOCUMENT_ROOT'] = './site/';
+$path = '/app/web/site/';
 
 // models
-require_once $_SERVER['DOCUMENT_ROOT'] . '/web/site/models/article_model.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/web/site/models/user_model.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/web/site/models/asset_model.php';
+require_once $pah . '/models/article_model.php';
+require_once $pah . '/models/user_model.php';
+require_once $pah . '/models/asset_model.php';
 
 
 // library
-require_once $_SERVER['DOCUMENT_ROOT'] . '/web/site/library/db_connect.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/web/site/library/db_connect.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/web/site/library/services.php';
+require_once $pah . '/library/db_connect.php';
+require_once $pah . '/library/db_connect.php';
+require_once $pah . '/library/services.php';
