@@ -23,12 +23,12 @@
     $stmt->closeCursor();
     return $userData;
   }
-
+// INSERT INTO "user" ("userName", "userEmail", "userPassword") values ('matthew', 'matthew@test.com', 1234);
 // register a new user
   function register_new_user($newUserData) {
     
     $db = dbConnect();
-    $sql = 'INSERT INTO "user" (userName, userEmail, userPassword) VALUES (:userName, :userEmail, :userPassword)';
+    $sql = 'INSERT INTO "user" ("userName", "userEmail", "userPassword") VALUES (:userName, :userEmail, :userPassword)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userName',      $newUserData['userName'],      PDO::PARAM_STR);
     $stmt->bindValue(':userEmail',     $newUserData['userEmail'],     PDO::PARAM_STR);
@@ -53,7 +53,7 @@
 // Ensure no duplicate emails exist in db when new users register
   function verify_email($userEmail){
     $db = dbConnect();
-    $sql = 'SELECT userEmail from "user" WHERE userEmail = :userEmail';
+    $sql = 'SELECT "userEmail" from "user" WHERE "userEmail" = :userEmail';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
     $stmt->execute();
