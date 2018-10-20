@@ -63,8 +63,7 @@ $user->addAction('loginUser',
     $_SESSION['userData'] = $userData;
 
     echo('set the session variables </br>');
-    exit;
-    header('Location: /site/profile.php');
+    include('../../../site/profile.php');
 
 });
 
