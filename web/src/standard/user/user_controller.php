@@ -84,7 +84,7 @@ $user->addAction('registerUser',
 
     // Ensure that password and email are valid and clean
     $filterLoad['userEmail'] = checkEmail($payload['userEmail']);
-    $userEmailVerify = verify_email($filterLoad['userEmail']);
+    // $userEmailVerify = verify_email($filterLoad['userEmail']);
 
     function get_all_users() {
       $db = dbConnect();
