@@ -69,7 +69,7 @@
     $sql = 'SELECT "userName", "userJoined", "userEmail" FROM "user"';
     $stmt = $db->prepare($sql);
     $stmt->execute();
-    $userData = $stmt->fetch(PDO::FETCH_NAMED);
+    $userData = $stmt->fetchALL(PDO::FETCH_NAMED);
     $stmt->closeCursor();
     return $userData;
   }
