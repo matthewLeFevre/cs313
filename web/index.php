@@ -9,7 +9,7 @@
   <title>Matthew LeFevre</title>
 </head>
 <body class="grid">
-<?php include $_SERVER['DOCUMENT_ROOT'] . 'header.php' ?>
+<?php include '/app/web/header.php' ?>
   <main class="col--12 home">
     <section class="page__section class="page__section__heading"">
       <h2 class="page__section__heading">About Me</h2>
