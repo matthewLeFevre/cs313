@@ -17,6 +17,7 @@
     </section>
     <section class="page__section class="page__section__heading"">
       <h2 class="page__section__heading">Other places you can learn more about me</h2>
+      <?= $_SERVER['DOCUMENT_ROOT']; ?>
       <div class="card__container">
         <a href="http://matthew-lefevre.com/" target="_blank" class="tab">
           <h3 class="tab__header">

@@ -1,0 +1,19 @@
+:root {
+  --brd-blue: #4A86E8;
+  --brd-whte: #fff;
+  --brd-blck: #5D5D5D; 
+  --yellow: #ffd945;
+  --red: #ff3f4f;
+  --purple: #e373ce;
+  --blue: #19d1e5;
+  --green: #81f900;
+  --orange: #ff9700;
+  --background: #333;
+  --white: #fff;
+  --font: 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .bs-lnk__hed, span {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+}

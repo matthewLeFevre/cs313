@@ -1,5 +1,6 @@
 <?php 
   require_once './head.php';
+  require_once './library/include.php';
   $indexHead = new Head('Home');
 ?><!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@
 
   <main class="grid--padded">
     <section class="home__container col--12 col--sml--7 col--mdm--8 bg-blue">
-
+    <?= test() ?>
     </section>
     <aside class="account__container col--12 col--sml--5 col--mdm--4 bg-yellow">
       <form action="../server.php" method="POST" class="form">

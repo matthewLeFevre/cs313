@@ -10,6 +10,7 @@
       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
       <meta http-equiv='X-UA-Compatible' content='ie=edge'>
       <link rel='stylesheet' href='https://rawcdn.githack.com/matthewLeFevre/css-patterns/master/dist/main.css'>
+      <link rel='stylesheet' href='config.css'>
       <title>$this->title</title>
     </head>";
     }
