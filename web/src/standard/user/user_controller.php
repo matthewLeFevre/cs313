@@ -39,29 +39,32 @@ $user->addAction('loginUser',
     $filterLoad = Controller::filterPayload($payload);
                   Controller::required(['userEmail', 'userPassword'], $filterLoad);
 
+    echo('got passed contoller methods');
     $userPassword = $filterLoad['userPassword'];
     $userEmail    = $payload['userEmail'];
     $userEmail    = checkEmail($userEmail);
+
+    echo('got passed check email methods </br>');
     // $userPasswordCheck = checkPassword($userPassword); uncomment befor production and test
 
     $userData  = get_user_by_email($userEmail);
     $hashCheck = password_verify($userPassword, $userData['userPassword']);
 
+    echo('got passed the password and email verification methods </br>');
     // throw error wrong password
     if (!$hashCheck) {
       return Response::err("Your password or username is incorrect.");
       exit;
     }
 
-    if($GLOBALS['user']->getTokenValidation()) {
-      $userData['apiToken'] = generateJWT($userData["userId"]);
-    }
+    echo('got passed the hashcheck');
 
     $_SESSION['loggedin'] = TRUE;
     $_SESSION['userData'] = $userData;
+
+    echo('set the session variables </br>');
+    exit;
     header('Location: /site/profile.php');
-    
-    return Response::data($userData, 'User successfully logged in.');
 
 });
 

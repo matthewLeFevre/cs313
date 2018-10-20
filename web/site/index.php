@@ -31,6 +31,7 @@
           <button type="submit" class="btn primary breath">Login</button>
         </fieldset>
       </form>
+      
       <form action="../server.php" method="POST" class="form">
         <fieldset class="form__field">
           <h3>Register</h3>
