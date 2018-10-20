@@ -15,6 +15,9 @@
     }
   }
 
+  echo($action);
+  exit;
+
   switch($action) {
     case 'home':
       include 'views/home.php'
