@@ -26,6 +26,8 @@
 
 // register a new user
   function register_new_user($newUserData) {
+    var_dump($newUserData);
+    exit;
     $db = dbConnect();
     $sql = 'INSERT INTO "user" (userName, userEmail, userPassword) VALUES (:userName, :userEmail, :userPassword)';
     $stmt = $db->prepare($sql);
