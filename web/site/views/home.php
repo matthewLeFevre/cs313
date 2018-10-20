@@ -2,7 +2,6 @@
   include '/app/web/site/library/include.php';
   $indexHead = new Head('Home');
   $users = get_users();
-  var_dump($users);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +16,9 @@
     <section class="home__container col--12 col--sml--7 col--mdm--8">
       <?php foreach ($users as $u) {?>
         <div>
-          <h2><?= $u['userName']?></h2>
-          <span><?= $u['userJoined'] ?></span>
-          <p><?= $u['userEmail']?></p>
+          <h2><?= $u['userName']; ?></h2>
+          <span><?= $u['userJoined']; ?></span>
+          <p><?= $u['userEmail'];?></p>
         </div>
       <?php } ?>
     </section>
