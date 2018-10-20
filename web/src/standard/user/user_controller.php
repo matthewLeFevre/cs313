@@ -83,10 +83,20 @@ $user->addAction('registerUser',
                   Controller::required(['userName', 'userEmail', 'userPassword'], $payload);
 
     // Ensure that password and email are valid and clean
-    // $filterLoad['userEmail'] = checkEmail($payload['userEmail']);
+    $filterLoad['userEmail'] = checkEmail($payload['userEmail']);
     // $userEmailVerify = verify_email($filterLoad['userEmail']);
 
-    echo('got here');
+    function get_all_users() {
+      $db = dbConnect();
+      $sql = "SELECT * FROM user";
+      $stmt = $db->prepare($sql);
+      $stmt->execute();
+      $data = $stmt->fetchAll(PDO::FETCH_NAMED);
+      $stmt->closeCursor();
+    return $data;
+    }
+
+    var_dump(get_all_users());
     exit;
 
     // Throw error that entered email address already exists
