@@ -15,3 +15,8 @@ require_once $path . '/models/asset_model.php';
 require_once $path . '/library/db_connect.php';
 require_once $path . '/library/db_connect.php';
 require_once $path . '/library/services.php';
+
+// common 
+require_once $path . '/common/head.php';
+require_once $path . '/common/header.php';
+require_once $path . '/common/footer.php';
