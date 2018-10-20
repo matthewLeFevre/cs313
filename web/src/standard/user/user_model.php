@@ -35,7 +35,7 @@
     $stmt->bindValue(':userPassword',  $newUserData['userPassword'],  PDO::PARAM_STR);
 
     echo("got past data bindings");
-    exit;
+  
     // Optional data not working right currently
     // $stmt->bindValue(':userFirstName', $newUserData['userFirstName'], PDO::PARAM_STR);
     // $stmt->bindValue(':userLastName',  $newUserData['userLastName'],  PDO::PARAM_STR);
